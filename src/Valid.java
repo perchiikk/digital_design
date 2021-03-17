@@ -71,7 +71,7 @@ public class Valid {
     public static boolean getDoubleBrackets(String inputText) {
         char[] wordsArray = inputText.toCharArray();
         for (int i = 0; i < wordsArray.length - 1; i++) {
-            if (wordsArray[i] == '[') {
+            if (wordsArray[i] == '[' ) {
                 if (wordsArray[i + 1] == '[' || wordsArray[i + 1] == ']') {
                     return false;
                 }

@@ -7,9 +7,19 @@ public class Unbox {
     public static String recursFirst(String inputText) {
         if (!inputText.contains("[")) return inputText;
 
-        return recursFirst(inputText.substring(inputText.lastIndexOf("[") + 1, inputText.indexOf("]")));
+        return recursFirst(inputText.substring(inputText.lastIndexOf("[") + 1, searchBracket(inputText)));
     }
 
+    public static int searchBracket(String inputText){
+        char[] symbolArray = inputText.toCharArray();
+        int startCount = inputText.lastIndexOf("[");
+        for(int i = startCount; i<symbolArray.length-1; i++){
+            if(symbolArray[i] == ']'){
+                return i;
+            }
+        }
+        return 0;
+    }
     /**
      * Рекурсия для выражения без вложенных скобок
      */
